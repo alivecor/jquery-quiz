@@ -114,7 +114,6 @@
         $('#questions').show();
         // $('#quiz-counter').show();
         $('.question-container:first-child').show().addClass('active-question');
-        $('html, body').animate({scrollTop:$(document).height()}, 1200);
         base.methods.updateCounter();
       },
       answerQuestion: function(answerEl) {
