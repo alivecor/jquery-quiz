@@ -142,7 +142,6 @@
             return;
           }
         }
-        $('html, body').animate({scrollTop:$(document).height()}, 1200);
         $('.active-question .quiz-response').html(response);
         $('.quiz-controls').fadeIn();
 
