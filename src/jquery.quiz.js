@@ -158,7 +158,6 @@
           .next('.question-container')
           .show()
           .addClass('active-question');
-        $('html, body').animate({scrollTop:$(document).height()}, 1200);
         $('.quiz-controls').hide();
 
         // check to see if we are at the last question
