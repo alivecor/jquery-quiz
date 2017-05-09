@@ -158,6 +158,7 @@
           .next('.question-container')
           .show()
           .addClass('active-question');
+        $('html, body').animate({scrollTop:$('.active-question').offset().top - 20}, 1200);
         $('.quiz-controls').hide();
 
         // check to see if we are at the last question
@@ -204,7 +205,8 @@
         } else {
           $(resultsScreenGood).show();
         }
-
+        debugger
+        $('html, body').animate({scrollTop:$(resultsScreen).offset().top - 220}, 1200);
         if (typeof base.options.finishCallback === 'function') {
           base.options.finishCallback();
         }
