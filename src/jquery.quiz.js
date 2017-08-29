@@ -19,8 +19,6 @@
       startButton = base.options.startButton,
       homeButton = base.options.homeButton,
       resultsScreen = base.options.resultsScreen,
-      resultsScreenGood = base.options.resultsScreenGood,
-      resultsScreenBad = base.options.resultsScreenBad,
       // gameOverScreen = base.options.gameOverScreen,
       currentQuestion = 1,
       score = 0,
@@ -30,10 +28,11 @@
       init: function() {
         base.methods.setup();
 
-        $(document).on('click', startButton, function(e) {
-          e.preventDefault();
+        // commenting this out since we are auto-starting
+        // $(document).on('click', startButton, function(e) {
+          // e.preventDefault();
           base.methods.start();
-        });
+        // });
 
         $(document).on('click', homeButton, function(e) {
           e.preventDefault();
@@ -200,12 +199,6 @@
         // $('#quiz-restart-btn').show();
         // $('#quiz-results').html('You got ' + score + ' out of ' + numQuestions + ' correct!');
         $(resultsScreen).show();
-        if (score < 3) {
-          $(resultsScreenBad).show();
-        } else {
-          $(resultsScreenGood).show();
-        }
-        debugger
         $('html, body').animate({scrollTop:$(resultsScreen).offset().top - 220}, 1200);
         if (typeof base.options.finishCallback === 'function') {
           base.options.finishCallback();
